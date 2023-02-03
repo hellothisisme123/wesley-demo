@@ -25,6 +25,8 @@ nav {
   justify-content: center;
   gap: 3rem;
   font-size: 2rem;
+  z-index: 10000000;
+  background: linear-gradient(var(--color-background) 50%, rgba(0, 0, 0, 0));
 }
 
 nav a {
