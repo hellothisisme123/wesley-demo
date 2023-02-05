@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import TheWelcome from '../components/TheWelcome.vue'
+
+const link = (to : string) => {
+  console.log(to);
+  
+}
 </script>
 
 <template>
@@ -25,8 +30,20 @@ import TheWelcome from '../components/TheWelcome.vue'
       <div class="colorPicker">
         <div class="title">Color Picker</div>
         <p>
-          Have you ever
+          Have you ever been having trouble picking colors for <span class="green">YOUR</span> website?
+          <br>
+          have you ever been stumped with a fitting second color scheme?
         </p>
+        <h2>You should check out my my custom color picker</h2>
+        <ul>
+          <li>Multiple modes</li>
+          <li>Adjustable themes</li>
+          <li>Copy and save themes</li>
+        </ul>
+        <div class="btnWrapper">
+          <RouterLink to="/colorPicker">Color Picker</RouterLink>
+          <button class="colorPickerBtn" @click="link('colorPicker')">Color Picker</button>
+        </div>
       </div>
 
       <div class="divider"></div>
@@ -52,6 +69,40 @@ import TheWelcome from '../components/TheWelcome.vue'
     display: grid;
     grid-template-columns: 5fr 1fr 5fr 1fr 5fr;
     min-height: 50vh;
+  }
+
+  .btnWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+  
+  .purposes button {
+    background-color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+    border-radius: 1000px;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .purposes button:hover {
+    scale: 1.1;
+  }
+
+  .purposes .title {
+    margin-bottom: 1rem;
+  }
+
+  .purposes h2 {
+    line-height: 1;
+    padding: 0.75rem 0;
+  }
+
+  .purposes ul {
+    padding: 0 1rem;
   }
 
   .purposes > div > .title {
@@ -83,6 +134,7 @@ import TheWelcome from '../components/TheWelcome.vue'
     /*margin-top: 5%;*/
     display: flex;
     flex-direction: column;
+    padding: 0 2rem;
   }
 
   .bold {
